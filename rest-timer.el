@@ -1,4 +1,4 @@
-;;; rest-timer.el --- Simple countdown timer      -*- lexical-binding: t; -*-
+j;;; rest-timer.el --- Simple countdown timer      -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2018  Daniel Kraus
 ;;
@@ -29,9 +29,9 @@
 ;; duration for a task. If there is no expcted time, it will prompt a choice.
 ;; Otherwise, it will start to clock in.
 ;;
-;; An hard stop will be running, if the effort is over a certain
+;; A hard stop will be executed, if the effort is over a certain
 ;; duration. For example, 49 minutes. Once the time is over, the
-;; buffer will switch to a special buffer.
+;; buffer will switch to a special buffer to remind the user.
 ;;
 ;; At the end of day, be-aware of that:
 ;;
