@@ -44,7 +44,7 @@
 (add-hook 'org-clock-in-prepare-hook
           'rest-timer-org-mode-ask-effort)
 
-(defvar my-org-clock-default-effort '("5" "20" "50:00"))
+(defvar my-org-clock-default-effort '("5" "20" "50"))
 
 (defgroup rest-timer nil
   "rest-timer"
