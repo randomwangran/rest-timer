@@ -35,7 +35,7 @@
 ;;
 ;; At the end of day, be-aware of that:
 ;;
-;;                              知足常乐，贪责多忧。
+;;                              知足常乐，贪则多忧。
 ;;                                                   《道德经》
 
 ;;; Code:
@@ -111,11 +111,11 @@ Yin and Yang by Normand Veilleux.
                                                                   \"\"\"\"\"\"\"\"\"\"\"\"
 
 
-                                                                             知足常乐，贪责多忧。"
+                                                                             知足常乐，贪则多忧。"
 			(/ (window-height) 4) (/ (window-width) 2))
         (read-only-mode)
 	(sit-for (* 5 (/ (abs (random)) (float most-positive-fixnum))))
-	(message "知足常乐，贪责多忧。"))))
+	(message "知足常乐，贪则多忧。"))))
 
 (defun rest-timer-rest-ready ()
   "Display rest ready message and reset timer."
