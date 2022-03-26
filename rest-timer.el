@@ -57,7 +57,7 @@
   :safe #'integerp
   :group 'rest-timer)
 
-(defcustom rest-timer-threshold 1
+(defcustom rest-timer-threshold 49
   "Time for running rest timer."
   :type 'integer
   :safe #'integerp
