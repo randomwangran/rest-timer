@@ -1,12 +1,12 @@
-j;;; rest-timer.el --- Simple countdown timer      -*- lexical-binding: t; -*-
+;;; rest-timer.el --- Desire constrainer
 
 ;; Copyright (C) 2018  Daniel Kraus
 ;;
 ;; Author: Daniel Kraus <daniel@kraus.my>
 ;;         Ran Wang
-;; Version: 0.1
+;; Version: 0.1.1
 ;; Package-Requires: ((emacs "24.4"))
-;; Keywords: convenience, timer
+;; Keywords: timer
 ;; URL: https://github.com/randomwangran/rest-timer
 
 ;; This program is free software; you can redistribute it and/or modify
@@ -44,7 +44,7 @@ j;;; rest-timer.el --- Simple countdown timer      -*- lexical-binding: t; -*-
 (add-hook 'org-clock-in-prepare-hook
           'rest-timer-org-mode-ask-effort)
 
-(defvar my-org-clock-default-effort '("5" "20" "50"))
+(defvar rest-timer-org-clock-default-effort '("5" "20" "50"))
 
 (defgroup rest-timer nil
   "rest-timer"
@@ -86,6 +86,7 @@ Yin and Yang by Normand Veilleux.
   (interactive)
   (if t
       (progn
+        (delete-other-windows)
 	(switch-to-buffer (get-buffer-create "*butterfly*"))
 	(erase-buffer)
 	(sit-for 0)
@@ -124,7 +125,6 @@ Yin and Yang by Normand Veilleux.
     (rest-butterfly))
   (setq rest-timer--timer nil))
 
-;;;###autoload
 (defun rest-timer (&optional duration)
   "Set a rest timer to DURATION in seconds or rest-timer-default-duration."
   (interactive "P")
@@ -158,7 +158,7 @@ Yin and Yang by Normand Veilleux.
 (defun rest-timer-org-mode-ask-effort ()
   "Ask for an effort estimate when clocking in.
 
-There are three options: `my-org-clock-default-effort`. If there
+There are three options: `rest-timer-org-clock-default-effort`. If there
 is pre-defined effort in the current heading, do nothing.
 Otherwise, prompt for choice.
 
@@ -169,7 +169,7 @@ defined by the user.
     (let ((effort
            (completing-read
             "Effort: "
-            my-org-clock-default-effort)))
+            rest-timer-org-clock-default-effort)))
       (unless (equal effort "")
         (org-set-property "Effort" effort))))
   (if (> (string-to-number
